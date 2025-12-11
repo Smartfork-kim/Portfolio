@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>(주)스마트포크 - Imagine to Reality | AI 제조 & 스마트 솔루션</title>
+    <meta name="description" content="스마트포크는 AI 기획과 제조를 연결하는 하이브리드 크리에이터 그룹입니다. 다마스커스 식칼, 천체망원경 등 아이디어 상품 제조 및 실전 AI 교육, 시제품 제작 아웃소싱을 제공합니다.">
+    <meta name="keywords" content="스마트포크, (주)스마트포크, AI 제조, 스마트 주방용품, 캠핑 장비, AI 교육, 시제품 제작, OEM, ODM, 와디즈 펀딩">
+    <meta name="author" content="SMART FORK Co., Ltd.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="(주)스마트포크 - Imagine to Reality">
+    <meta property="og:description" content="상상은 AI로, 결과는 제조로. 디지털과 피지컬의 경계를 허무는 크리에이터 그룹.">
+    <meta property="og:image" content="https://r2.flowith.net/files/f1c472ea-6386-4de8-87a9-c72cfbb8644f/L2ASR-SMART_FORK___EM@1854x1927.png">
+    <meta property="og:url" content="https://smartfork.co.kr">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "(주)스마트포크",
+      "alternateName": "SMART FORK Co., Ltd.",
+      "url": "https://smartfork.co.kr",
+      "logo": "https://r2.flowith.net/files/f1c472ea-6386-4de8-87a9-c72cfbb8644f/L2ASR-SMART_FORK___EM@1854x1927.png",
+      "description": "디지털(AI)과 피지컬(제조)의 경계를 허무는 크리에이터 그룹",
+      "foundingDate": "2019-12-23",
+      "founders": [
+        { "@type": "Person", "name": "김상철" },
+        { "@type": "Person", "name": "유예찬" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "signboardkr@gmail.com",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    
+    <!-- Tailwind Configuration for Dark Mode -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0f172a',
+                            surface: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        pretendard: ['Pretendard', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+<body class="bg-white dark:bg-dark-bg text-gray-900 dark:text-gray-100 font-pretendard transition-colors duration-300">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 bg-white dark:bg-dark-bg z-[9999] flex flex-col justify-center items-center transition-opacity duration-500">
+        <img src="https://r2.flowith.net/files/f1c472ea-6386-4de8-87a9-c72cfbb8644f/L2ASR-SMART_FORK___EM@1854x1927.png" alt="Loading" class="w-24 h-24 mb-4 animate-pulse object-contain">
+        <p class="font-montserrat font-bold text-gray-400 tracking-widest text-sm">LOADING</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center relative">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 mb-4 md:mb-0 group">
+                    <img src="https://r2.flowith.net/files/f1c472ea-6386-4de8-87a9-c72cfbb8644f/L2ASR-SMART_FORK___EM@1854x1927.png" alt="Smart Fork Logo" class="h-10 w-auto group-hover:rotate-12 transition-transform duration-300">
+                    <span class="font-montserrat font-bold text-xl tracking-tight text-gray-900 dark:text-white hidden md:block group-hover:text-[#E6007E] transition-colors">SMART FORK</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E6007E] dark:hover:text-[#E6007E] transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E6007E] dark:hover:text-[#E6007E] transition-colors">About</a>
+                    <a href="#business-focus" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E6007E] dark:hover:text-[#E6007E] transition-colors">Business</a>
+                    <a href="#products" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E6007E] dark:hover:text-[#E6007E] transition-colors">Portfolio</a>
+                    <a href="#contact" class="px-5 py-2 bg-gradient-primary text-white rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Contact</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden text-gray-700"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Controls -->
+                <div class="absolute right-0 top-0 md:hidden flex items-center gap-4">
+                    <button id="mobile-dark-toggle" class="p-2">
+                        <i data-lucide="moon" class="w-6 h-6 dark:hidden text-gray-800"></i>
+                        <i data-lucide="sun" class="w-6 h-6 hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="menu-btn" class="p-2">
+                        <i data-lucide="menu" class="w-6 h-6 text-gray-800 dark:text-white"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 bg-white dark:bg-dark-surface rounded-lg shadow-xl p-4 flex flex-col gap-4 text-center border border-gray-100 dark:border-gray-700">
+                <a href="#home" class="text-gray-700 dark:text-gray-200 font-medium">Home</a>
+                <a href="#about" class="text-gray-700 dark:text-gray-200 font-medium">About</a>
+                <a href="#business-focus" class="text-gray-700 dark:text-gray-200 font-medium">Business</a>
+                <a href="#products" class="text-gray-700 dark:text-gray-200 font-medium">Portfolio</a>
+                <a href="#education" class="text-gray-700 dark:text-gray-200 font-medium">Education</a>
+                <a href="#contact" class="text-[#E6007E] font-bold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://r2.flowith.net/files/jpeg/00LQN-ai_to_kitchenware_visualization_index_0@992x1056.jpeg" alt="AI to Reality" class="w-full h-full object-cover transition-transform duration-[20s] hover:scale-110" loading="eager">
+        </div>
+        <div class="absolute inset-0 z-10 hero-overlay"></div>
+        <div class="absolute inset-0 z-10 pattern-overlay"></div>
+
+        <div class="relative z-20 container mx-auto px-6 text-center" id="hero-content">
+            <div class="inline-block mb-6 animate-pulse">
+                <span class="px-4 py-1 rounded-full border border-white/30 bg-white/10 text-white text-xs font-montserrat tracking-widest backdrop-blur-md">DIGITAL TO PHYSICAL</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                Imagine to <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9900] to-[#E6007E]">Reality</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                상상은 AI로, 결과는 제조로.<br class="hidden md:block">
+                스마트포크는 당신의 막연한 아이디어를<br>명확한 비즈니스 현실로 만듭니다.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#products" class="px-8 py-4 bg-white text-gray-900 rounded-full font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 group">
+                    <span>포트폴리오 보기</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#contact" class="px-8 py-4 border border-white/30 text-white rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm">
+                    협업 문의하기
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white/50"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal-left">
+                    <span class="text-[#E6007E] font-bold text-sm tracking-widest mb-2 block font-montserrat">WHO WE ARE</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight text-gray-900 dark:text-white">
+                        "Change your life"
+                    </h2>
+                    <div class="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                        <p>
+                            스마트포크는 단순한 기술 연구소가 아닙니다. 우리는 <strong class="text-gray-900 dark:text-white">'First User'</strong> 정신을 바탕으로, 직접 부딪히고 성공해본 경험만을 제안합니다.
+                        </p>
+                        <p>
+                            두 명의 해외 유학파 대표(김상철, 유예찬)가 이끄는 글로벌 소싱 전문성을 바탕으로, AI 기술을 활용해 아이디어를 구체화하고 제조 인프라를 통해 실제 제품으로 탄생시킵니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative reveal-right">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://r2.flowith.net/files/jpeg/U1RMK-business_area_icons_gradient_index_4@992x1056.jpeg" alt="Smart Fork Identity" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-gradient-primary opacity-20 blur-3xl rounded-full z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Focus (Tabs) -->
+    <section id="business-focus" class="py-20 bg-gray-50 dark:bg-dark-surface transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 reveal-bottom">
+                <span class="text-[#FF9900] font-bold text-sm tracking-widest mb-2 block font-montserrat">WHAT WE DO</span>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Our Business Divisions</h2>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 reveal-bottom" id="business-tabs">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- Tab Content -->
+            <div id="business-content" class="max-w-4xl mx-auto bg-white dark:bg-dark-bg rounded-2xl shadow-xl overflow-hidden min-h-[400px] relative reveal-bottom">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Edge Section -->
+    <section id="edge" class="py-20 bg-white dark:bg-dark-bg border-y border-gray-100 dark:border-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#FF9900] font-bold text-sm tracking-widest mb-2 block font-montserrat">COMPETITIVE EDGE</span>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Why Smart Fork?</h2>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">AI 기획부터 제조 생산까지, 스마트포크만의 독보적인 경쟁력을 만나보세요.</p>
+            </div>
+            
+            <div id="edge-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white dark:bg-dark-bg transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div id="stats-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Portfolio -->
+    <section id="products" class="py-24 bg-[#F8F9FA] dark:bg-[#111] transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-[#FF9900] font-bold text-sm tracking-widest mb-2 block font-montserrat">PORTFOLIO</span>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">Our Products</h2>
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4">
+                    <button class="filter-btn px-6 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-bold transition-all shadow-md" data-category="All">All</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-bold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm" data-category="Kitchen">Kitchen</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-bold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm" data-category="Camping">Camping</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-bold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm" data-category="Board Game">Board Game</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-bold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm" data-category="Leisure">Leisure</button>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Education Section -->
+    <section id="education" class="py-24 bg-white dark:bg-dark-bg relative transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#E6007E] font-bold text-sm tracking-widest mb-2 block font-montserrat">PRACTICAL AI</span>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white">AI Education</h2>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">기능 설명이 아닌, 현업 매출과 효율로 직결되는 '진짜 AI 활용법'을 교육합니다.</p>
+            </div>
+            
+            <div id="ai-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Outsourcing Section -->
+    <section id="outsourcing" class="py-24 bg-gray-900 text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://r2.flowith.net/files/png/QP46S-subtle_geometric_background_pattern_index_6@1024x1024.png'); background-size: cover;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-5/12 reveal-left">
+                    <span class="text-[#FF9900] font-bold text-sm tracking-widest mb-2 block font-montserrat">MANUFACTURING</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Total Manufacturing<br>Solution</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        70개 이상의 협력사 네트워크를 통해 기획부터 생산, 물류까지 원스톱으로 해결해드립니다.
+                        소량 굿즈부터 대량 기업 주문까지, 스마트포크는 타협하지 않는 품질을 약속합니다.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white/10 p-3 rounded-full text-[#FF9900]">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Perfect Customization</h4>
+                                <p class="text-sm text-gray-400">기성품 로고 인쇄가 아닌, 금형/소재부터 완전 맞춤 제작</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white/10 p-3 rounded-full text-[#E6007E]">
+                                <i data-lucide="globe-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Global Logistics</h4>
+                                <p class="text-sm text-gray-400">글로벌 소싱 및 철저한 QC 시스템 가동</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-7/12 reveal-right">
+                    <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-2xl font-bold mb-8 font-montserrat">Process</h3>
+                        <div id="process-list" class="space-y-6">
+                            <!-- Injected via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="py-24 bg-white dark:bg-dark-bg overflow-hidden transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#FF9900] font-bold text-sm tracking-widest mb-2 block font-montserrat">HISTORY & AWARDS</span>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Milestones</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                <!-- Left: Infographic -->
+                <div class="lg:w-5/12 w-full reveal-left">
+                    <div class="sticky top-24">
+                        <img src="https://r2.flowith.net/files/jpeg/P0UUJ-achievements_infographic_index_5@992x1056.jpeg" alt="Achievements Infographic" class="w-full rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500 border border-gray-100 dark:border-gray-700" loading="lazy">
+                        <div class="mt-8 p-8 bg-gray-50 dark:bg-dark-surface rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                            <h4 class="font-bold text-xl mb-3 flex items-center gap-2 text-gray-900 dark:text-white">
+                                <i data-lucide="award" class="text-[#E6007E]"></i>
+                                <span>Award Highlights</span>
+                            </h4>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li class="flex gap-2">
+                                    <span class="text-[#FF9900] font-bold">2025</span>
+                                    <span>KT AI PAN 2025 우수상 (Top 10)</span>
+                                </li>
+                                <li class="flex gap-2">
+                                    <span class="text-[#FF9900] font-bold">2025</span>
+                                    <span>APEC AI 영상 공모전 본선</span>
+                                </li>
+                                <li class="flex gap-2">
+                                    <span class="text-[#FF9900] font-bold">2025</span>
+                                    <span>와디즈 Awards Best Maker</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Timeline -->
+                <div class="lg:w-7/12 w-full relative reveal-right">
+                    <!-- Progress Line -->
+                    <div class="absolute left-[27px] md:left-[29px] top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+                    <div id="timeline-progress" class="absolute left-[27px] md:left-[29px] top-0 w-0.5 bg-gradient-to-b from-[#FF9900] to-[#E6007E] h-0 transition-all duration-300"></div>
+
+                    <div id="history-container" class="space-y-12">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <section class="py-24 bg-gray-50 dark:bg-dark-surface transition-colors duration-300">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <span class="text-[#E6007E] font-bold text-sm tracking-widest mb-2 block font-montserrat">GET IN TOUCH</span>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Start Your Project</h2>
+            </div>
+            
+            <div class="bg-white dark:bg-dark-bg p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-gray-700 focus:border-[#E6007E] focus:ring-1 focus:ring-[#E6007E] outline-none transition-all dark:text-white" placeholder="성함 / 기업명">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-gray-700 focus:border-[#E6007E] focus:ring-1 focus:ring-[#E6007E] outline-none transition-all dark:text-white" placeholder="이메일 주소">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                        <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-gray-700 focus:border-[#E6007E] focus:ring-1 focus:ring-[#E6007E] outline-none transition-all resize-none dark:text-white" placeholder="프로젝트 내용이나 문의사항을 자유롭게 적어주세요."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-gradient-primary text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        문의하기
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#111] text-white pt-24 pb-12 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 font-montserrat">Let's Create<br><span class="text-gradient">Something Real.</span></h2>
+                    <p class="text-gray-400 mb-8 max-w-md">새로운 비즈니스 파트너십과 혁신적인 아이디어를 기다립니다.<br>막연함을 명확함으로 바꿀 준비가 되셨나요?</p>
+                    <a href="mailto:signboardkr@gmail.com" class="inline-flex items-center gap-2 px-8 py-3 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>signboardkr@gmail.com</span>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-white">Company</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>(주)스마트포크</li>
+                            <li>대표: 김상철, 유예찬</li>
+                            <li>사업자등록번호: 760-87-01868</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-white">Channels</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#" class="hover:text-[#E6007E] transition-colors">Wadiz Projects</a></li>
+                            <li><a href="#" class="hover:text-[#E6007E] transition-colors">Makuake Japan</a></li>
+                            <li><a href="#" class="hover:text-[#E6007E] transition-colors">Inflearn Lectures</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>&copy; 2025 SMART FORK Co., Ltd. All Rights Reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 z-[1000] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
+        <div class="bg-white dark:bg-dark-surface rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 flex flex-col md:flex-row shadow-2xl opacity-0 scale-95 transition-all duration-300" id="modal-content">
+            <button id="modal-close" class="absolute top-4 right-4 z-20 p-2 bg-white/20 hover:bg-white/40 rounded-full text-white md:text-gray-500 md:hover:text-black transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="md:w-1/2 bg-gray-100 dark:bg-gray-800">
+                <img id="modal-img" src="" alt="Product" class="w-full h-full object-cover min-h-[300px]">
+            </div>
+            <div class="md:w-1/2 p-8 md:p-12">
+                <span id="modal-category" class="text-[#E6007E] font-bold text-xs tracking-widest uppercase mb-2 block"></span>
+                <h3 id="modal-title" class="text-3xl font-bold text-gray-900 dark:text-white mb-4"></h3>
+                <div class="w-12 h-1 bg-gradient-primary mb-6"></div>
+                <p id="modal-desc" class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"></p>
+                <div class="bg-gray-50 dark:bg-black/20 p-4 rounded-lg border border-gray-100 dark:border-gray-700">
+                    <h4 class="font-bold text-sm mb-2 text-gray-800 dark:text-gray-200">Highlights</h4>
+                    <p id="modal-detail" class="text-sm text-gray-500 dark:text-gray-400"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-40 bg-black dark:bg-white text-white dark:text-black p-4 rounded-full shadow-xl translate-y-24 opacity-0 transition-all duration-500 hover:-translate-y-1 focus:outline-none">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+    
+</body>
+</html>
